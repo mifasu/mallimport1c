@@ -27,7 +27,7 @@
 
 ## Системные требования
 
-- October CMS 3.x
+- October CMS 3.x, October CMS 4.x
 - PHP 8.1+
 - Плагин OFFLINE.Mall
 - MySQL/MariaDB
