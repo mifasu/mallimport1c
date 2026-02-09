@@ -2,6 +2,13 @@
     "name": "dmdev/mallimport1c-plugin",
     "type": "october-plugin",
     "description": "No description provided yet...",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Denis Mishin",
+            "email": "mifasu@gmail.com"
+        }
+    ],
     "require": {
         "composer/installers": "~1.0"
     }
