@@ -37,7 +37,7 @@
 1. Клонируйте репозиторий в папку плагинов:
 ```bash
 cd plugins/dmdev/
-git clone https://github.com/mifasu/dmdev-mallimport1c.git mallimport1c
+git clone https://github.com/mifasu/mallimport1c.git mallimport1c
 ```
 
 2. Выполните миграции:
@@ -210,11 +210,12 @@ $results = $mallSyncService->processBatch(100);
 - **v1.0.5** - Система маппинга брендов и административная панель
 - **v1.0.6** - Добавлен импорт поля «Расширенное описание» из XML, Описание теперь форматируется с абзацами и переносами строк
 - **v1.0.7** - Робастный DOM-парсинг XML с восстановлением, записываются предупреждения о файлах с кривыми тегами
+- **v1.0.8** - Небольшие правки после теста в релизе
 
 ### Автор
 
-- **Denis Mishin** https://dmdev.ru
-- GitHub: https://github.com/mifasu/dmdev-mallimport1c
+- **Denis Mishin** mifasu@gmail.com
+- GitHub: https://github.com/mifasu/mallimport1c
 
 ## Административная панель брендов
 
