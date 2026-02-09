@@ -1,0 +1,39 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    external_name:
+        label: Название бренда (1С)
+        type: text
+        searchable: true
+        sortable: true
+
+    external_id:
+        label: ID 1С
+        type: text
+        searchable: true
+        sortable: false
+
+    mallBrand:
+        label: Бренд Mall
+        type: text
+        relation: mallBrand
+        valueFrom: name
+        searchable: true
+        sortable: false
+        
+    auto_mapped:
+        label: Автопоиск
+        type: switch
+        sortable: true
+
+    is_active:
+        label: Активно
+        type: switch
+        sortable: true
+
+    created_at:
+        label: Создано
+        type: datetime
+        sortable: true

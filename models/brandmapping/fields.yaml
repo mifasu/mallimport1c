@@ -1,0 +1,39 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    external_name:
+        label: Название бренда из 1С
+        type: text
+        required: true
+
+    external_id:
+        label: ID бренда в 1С
+        type: text
+        required: true
+
+    mallBrand:
+        label: Бренд Mall
+        type: relation
+        nameFrom: name
+        emptyOption: '-- Выберите бренд --'
+        placeholder: Поиск бренда...
+        comment: Выберите соответствующий бренд из Mall
+
+    auto_mapped:
+        label: Автоматически сопоставлен
+        type: switch
+        comment: Отметьте, если маппинг был создан автоматически
+
+    is_active:
+        label: Активное сопоставление
+        type: switch
+        default: true
+        comment: Неактивные маппинги игнорируются
+
+    notes:
+        label: Заметки администратора
+        type: textarea
+        size: small
+        comment: Дополнительная информация о маппинге

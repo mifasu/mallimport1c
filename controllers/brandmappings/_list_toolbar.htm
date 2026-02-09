@@ -1,0 +1,25 @@
+<div data-control="toolbar">
+    <a 
+        href="<?= Backend::url('dmdev/mallimport1c/brandmappings/create') ?>" 
+        class="btn btn-primary oc-icon-plus">
+        Создать маппинг
+    </a>
+    
+    <button
+        class="btn btn-default oc-icon-magic" 
+        data-request="onAutoMap"
+        data-request-confirm="Запустить автопоиск для выбранных записей?"
+        data-list-checked-trigger
+        data-list-checked-request>
+        Автопоиск
+    </button>
+    
+    <button
+        class="btn btn-default oc-icon-times" 
+        data-request="onResetMapping"
+        data-request-confirm="Сбросить маппинг для выбранных записей?"
+        data-list-checked-trigger
+        data-list-checked-request>
+        Сбросить
+    </button>
+</div>

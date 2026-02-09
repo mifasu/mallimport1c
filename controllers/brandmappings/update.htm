@@ -1,0 +1,40 @@
+<?= Form::open() ?>
+    <div class="layout">
+        <div class="layout-row">
+            <?= $this->formRender() ?>
+        </div>
+    </div>
+    
+    <div class="form-buttons">
+        <div class="loading-indicator-container">
+            <button 
+                type="submit"
+                data-request="onSave"
+                data-hotkey="ctrl+s, cmd+s"
+                data-load-indicator="Saving..."
+                class="btn btn-primary">
+                Сохранить
+            </button>
+            <button 
+                type="button"
+                data-request="onSave"
+                data-request-data="close:1"
+                data-hotkey="ctrl+enter, cmd+enter"
+                data-load-indicator="Saving..."
+                class="btn btn-default">
+                Сохранить и закрыть
+            </button>
+            <button 
+                type="button" 
+                data-request="onDelete"
+                data-load-indicator="Deleting..."
+                data-confirm="Вы уверены?"
+                class="btn btn-danger">
+                Удалить
+            </button>
+            <span class="btn-text">
+                или <a href="<?= Backend::url('dmdev/mallimport1c/brandmappings') ?>">отменить</a>
+            </span>
+        </div>
+    </div>
+<?= Form::close() ?>

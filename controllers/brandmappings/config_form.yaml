@@ -1,0 +1,22 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+name: Маппинг брендов
+form: $/dmdev/mallimport1c/models/brandmapping/fields.yaml
+modelClass: Dmdev\MallImport1c\Models\BrandMapping
+
+create:
+    title: Создать маппинг бренда
+    redirect: dmdev/mallimport1c/brandmappings/update/:id
+    redirectClose: dmdev/mallimport1c/brandmappings
+
+update:
+    title: Редактировать маппинг
+    redirect: dmdev/mallimport1c/brandmappings
+    redirectClose: dmdev/mallimport1c/brandmappings
+
+preview:
+    title: Просмотр маппинга
+    
+defaultRedirect: dmdev/mallimport1c/brandmappings

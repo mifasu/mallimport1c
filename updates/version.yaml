@@ -1,0 +1,31 @@
+v1.0.1: First version of mallimport1c
+v1.0.2: 
+  - Add Temporary Import Table
+  - create_temp_import_table.php
+v1.0.3:
+  - Add brand and website category fields to temp import table
+  - add_brand_category_fields_to_temp_import.php
+v1.0.4:
+  - Add hierarchical category mapping system
+  - Support for nested group categories (e.g., BTSO → ПАРФЮМЕРИЯ)
+  - Enhanced category mapping with directory priorities
+  - Improved CommerceML 2.07 directories support
+v1.0.5:
+  - Add brand mapping system
+  - Create brand mapping table for 1C to Mall brand correlation
+  - create_brand_mapping_table.php
+  - Administrative interface for brand mapping management
+  - Backend menu integration and permissions system
+v1.0.6:
+  - Support Extended Description from XML with paragraph and <br> formatting so descriptions render properly on the storefront
+v1.0.7:
+  - Load XML with DOMDocument::loadXML in recovery mode, log corrupted files, and keep importing despite malformed tags or ampersands
+v1.0.8:
+  - DebugExchangeController now atomically refreshes storage/app/1c_debug/current/import.xml and offers.xml via temp files and rename
+  - Added php artisan mallimport1c:run with batch sizing, cache lock, early exit, and detailed stats
+  - TempImportService and MallSyncService filter pending records by file_last_modified using new countPending/processBatch helpers and docs/AUTOMATION.md guidance
+v1.0.8.1:
+  - Force namespaced dmdev.mallimport1c config resolution, normalize paths with rtrim+DIRECTORY_SEPARATOR, and keep file_last_modified timestamps in UTC
+  - DebugExchangeController whitelists only import0_1.xml/import.xml/offers0_1.xml/offers.xml and TempImportService exposes calculateCurrentFileStamp()
+v1.0.8.2:
+  - Compare $firstRecord->file_last_modified and $fileLastModified as UTC strings so timezone differences never trigger unnecessary truncate() calls

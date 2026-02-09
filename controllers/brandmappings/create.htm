@@ -1,0 +1,32 @@
+<?= Form::open() ?>
+    <div class="layout">
+        <div class="layout-row">
+            <?= $this->formRender() ?>
+        </div>
+    </div>
+    
+    <div class="form-buttons">
+        <div class="loading-indicator-container">
+            <button 
+                type="submit"
+                data-request="onCreate"
+                data-hotkey="ctrl+s, cmd+s"
+                data-load-indicator="Creating..."
+                class="btn btn-primary">
+                <u>С</u>оздать
+            </button>
+            <button 
+                type="button"
+                data-request="onCreate"
+                data-request-data="close:1"
+                data-hotkey="ctrl+enter, cmd+enter"
+                data-load-indicator="Creating..."
+                class="btn btn-default">
+                Создать и закрыть
+            </button>
+            <span class="btn-text">
+                или <a href="<?= Backend::url('dmdev/mallimport1c/brandmappings') ?>">отменить</a>
+            </span>
+        </div>
+    </div>
+<?= Form::close() ?>

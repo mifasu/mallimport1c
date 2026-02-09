@@ -1,0 +1,14 @@
+# ===================================
+#  List Behavior Config
+# ===================================
+
+title: Маппинг брендов 1С → Mall
+modelClass: Dmdev\MallImport1c\Models\BrandMapping
+list: $/dmdev/mallimport1c/models/brandmapping/columns.yaml
+recordUrl: dmdev/mallimport1c/brandmappings/update/:id
+noRecordsMessage: Нет записей для отображения
+recordsPerPage: 50
+
+toolbar:
+    search:
+        prompt: Поиск по названию бренда...

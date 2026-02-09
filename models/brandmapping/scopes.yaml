@@ -1,0 +1,26 @@
+# ===================================
+#  Filter Scope Definitions
+# ===================================
+
+scopes:
+    mapped:
+        label: Сопоставленные
+        type: switch
+        default: 1
+        conditions: mall_brand_id is not null
+
+    unmapped:
+        label: Не сопоставленные
+        type: switch
+        conditions: mall_brand_id is null
+
+    auto_mapped:
+        label: Автопоиск
+        type: switch
+        conditions: auto_mapped = true
+
+    active:
+        label: Активные
+        type: switch
+        default: 1
+        conditions: is_active = true
