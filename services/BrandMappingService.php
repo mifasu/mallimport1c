@@ -163,6 +163,9 @@ class BrandMappingService
                 $mallBrandId = $this->tryAutoMapping($brandId, $brandName);
                 if ($mallBrandId) {
                     $autoMapped++;
+                } else {
+                    // Создаём запись-заглушку для дальнейшей ручной настройки
+                    BrandMapping::createOrUpdate($brandId, $brandName);
                 }
                 $synced++;
             } else {

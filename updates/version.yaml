@@ -29,3 +29,7 @@ v1.0.8.1:
   - DebugExchangeController whitelists only import0_1.xml/import.xml/offers0_1.xml/offers.xml and TempImportService exposes calculateCurrentFileStamp()
 v1.0.8.2:
   - Compare $firstRecord->file_last_modified and $fileLastModified as UTC strings so timezone differences never trigger unnecessary truncate() calls
+v1.0.8.3:
+  - Create placeholder brand mapping entries during synchronization when automatic matching fails
+  - Ensure new brands from 1C are added to the mapping table for manual review
+  - Fix syncBrandsFromDirectory now creates BrandMapping records when no auto-match is found
