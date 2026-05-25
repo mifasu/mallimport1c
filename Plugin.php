@@ -1,8 +1,10 @@
 <?php namespace Dmdev\MallImport1c;
 
 use Backend;
+use Event;
 use System\Classes\PluginBase;
 use Illuminate\Support\Facades\Route;
+use Dmdev\MallImport1c\Classes\Search\MallSearchEnhancer;
 
 class Plugin extends PluginBase
 {
@@ -18,6 +20,27 @@ class Plugin extends PluginBase
             $controller = new \Dmdev\MallImport1c\Http\Controllers\DebugExchangeController();
             return $controller->handle($request);
         })->middleware('web');
+
+        // -----------------------------------------------------------------------
+        // Расширение поиска: мультисловый и е/ё-нечувствительный поиск
+        // Слушаем offline.sitesearch.results — срабатывает после всех провайдеров.
+        // Возвращаем обогащённую коллекцию.
+        // -----------------------------------------------------------------------
+        Event::listen('offline.sitesearch.results', function ($results) {
+            $query = trim(request()->get('q', ''));
+            if (!$query || mb_strlen($query) < 2) {
+                return null;
+            }
+
+            try {
+                $enhancer = new MallSearchEnhancer($query);
+                return $enhancer->enhance($results);
+            } catch (\Throwable $e) {
+                // Не прерываем поиск если наш код упал
+                \Log::error('[MallSearchEnhancer] ' . $e->getMessage(), ['exception' => $e]);
+                return null;
+            }
+        });
     }
 
     public function pluginDetails()
